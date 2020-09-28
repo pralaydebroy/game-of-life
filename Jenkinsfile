@@ -7,6 +7,11 @@ pipeline {
                bat'''mvn clean install '''
             }
         }
+        stage('Notify') {
+            steps {
+                slackSend()
+            }
+        }
 
     }
 }
