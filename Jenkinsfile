@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Notify') {
             steps {
-                slackSend message: '${env.JOB_NAME} - ${env.BUILD_NUMBER} ${env.BUILD_STATUS} after ${env.BUILD_TIME} '
+                slackSend message: "${env.JOB_NAME} - ${env.BUILD_NUMBER} ${env.BUILD_STATUS} after ${env.BUILD_TIME} (<${env.BUILD_URL}|Open>)"
             }
         }
 
