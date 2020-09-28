@@ -1,0 +1,11 @@
+#!/usr/bin/groovy
+#using scripted Pipeline
+
+node {
+    stage('Build'){
+        mvn clean package
+    }
+    stage('Test'){
+        mvn install
+    }
+}
